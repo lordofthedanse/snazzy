@@ -1,0 +1,8 @@
+.Tabs
+  - @tabs.each do |title, path|
+    - if current_page?(path)
+      .Tab.--active
+        == title
+    - else
+      = link_to path, class: "Tab", data: { turbo_action: "replace" } do
+        == title
